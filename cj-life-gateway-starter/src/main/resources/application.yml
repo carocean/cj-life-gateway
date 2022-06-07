@@ -1,0 +1,59 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /
+spring:
+  profiles:
+    active: ${life.spring.profiles.active:dev}
+  mvc:
+    pathmatch:
+    #swagger需要ant_path_matcher，否则api出不来
+    matching-strategy: ANT_PATH_MATCHER
+  application:
+    #调用者feign只认spring.application.name，不认eureka.instance.appname配置应用名
+    #所以不论服务提供者还是feign消费者，spring.application.name和eureka.instance.appname都配置就最好了
+    #feign调用方大小写不区分，而注册中心永远显示为大写
+    name: cj-life-gateway
+  cloud:
+    gateway:
+      routes:
+      discovery:
+        locator:
+          #服务名小写，服务名指在eureka中的application名，默认需要大写访问
+          lower-case-service-id: true
+          #是否开启自动在注册中心发现并路由服务
+          enabled: true
+  redis:
+    port: ${life.spring_redis_port:6379}
+    database: ${life.spring_redis_db:0}
+    password: ${life.spring_redis_pwd:123456}
+    hostName: ${life.spring_redis_host:localhost}
+#    sentinel:
+#      master: local-master
+#      nodes: 192.168.88.103:26380,192.168.88.103:26379
+#      password: 123456
+life:
+  security:
+    clients:
+      - client_id: client1
+        client_secret: client1_secret
+    auth_web:
+      host:  ${life.security_auth_web_host:http://localhost:8083}
+      confirm_access_url: /confirm_access
+      login_url: /login
+    auth_server:
+      host: ${life.security_auth_server_host:http://localhost:8080}
+      logout_url: /logout
+      token_url: /oauth/token
+    whitelist:
+      - /token
+      - /token/**
+      - /refresh_token
+      - /oauth2/**
+      - /logout
+    static_resources:
+      - /assets/**
+      - /css/**
+      - /images/**
+      - /js/**
+      - /img/**

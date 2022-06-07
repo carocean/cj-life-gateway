@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cj.life</groupId>
+        <artifactId>cj-life-ultimate</artifactId>
+        <!--不要指定为snapshots版。只指定正式版，会依据父pom的环境而变化-->
+        <version>0.0.1</version>
+        <!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    </parent>
+    <groupId>cj.life</groupId>
+    <artifactId>cj-life-gateway</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <cj.life.gateway.core.version>0.0.1-SNAPSHOT</cj.life.gateway.core.version>
+        <cj.life.gateway.start.version>0.0.1-SNAPSHOT</cj.life.gateway.start.version>
+    </properties>
+    <profiles>
+        <profile>
+            <!--用于根据环境切换属性。如部署时：deploy -P release此时会选择配置的release环境的属性-->
+            <id>release</id>
+            <properties>
+                <cj.life.gateway.core.version>0.0.1</cj.life.gateway.core.version>
+                <cj.life.gateway.start.version>0.0.1</cj.life.gateway.start.version>
+            </properties>
+        </profile>
+    </profiles>
+    <modules>
+        <module>cj-life-gateway-core</module>
+        <module>cj-life-gateway-starter</module>
+        <module>cj-life-test-app</module>
+    </modules>
+</project>
