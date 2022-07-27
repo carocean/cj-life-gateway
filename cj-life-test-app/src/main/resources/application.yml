@@ -9,8 +9,8 @@ spring:
     import: swagger.yml
   mvc:
     pathmatch:
-      #swagger需要ant_path_matcher，否则api出不来
-      matching-strategy: ant_path_matcher
+      #如果不采用ANT_PATH_MATCHER策略，swagger的api出不来
+      matching-strategy: ANT_PATH_MATCHER
   application:
     #调用者feign只认spring.application.name，不认eureka.instance.appname配置应用名
     #所以不论服务提供者还是feign消费者，spring.application.name和eureka.instance.appname都配置就最好了

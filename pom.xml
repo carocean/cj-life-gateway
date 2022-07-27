@@ -17,7 +17,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <cj.life.gateway.core.version>0.0.1-SNAPSHOT</cj.life.gateway.core.version>
+        <cj.life.gateway.framework.version>0.0.1-SNAPSHOT</cj.life.gateway.framework.version>
         <cj.life.gateway.start.version>0.0.1-SNAPSHOT</cj.life.gateway.start.version>
     </properties>
     <profiles>
@@ -25,13 +25,13 @@
             <!--用于根据环境切换属性。如部署时：deploy -P release此时会选择配置的release环境的属性-->
             <id>release</id>
             <properties>
-                <cj.life.gateway.core.version>0.0.1</cj.life.gateway.core.version>
+                <cj.life.gateway.framework.version>0.0.1</cj.life.gateway.framework.version>
                 <cj.life.gateway.start.version>0.0.1</cj.life.gateway.start.version>
             </properties>
         </profile>
     </profiles>
     <modules>
-        <module>cj-life-gateway-core</module>
+        <module>cj-life-gateway-framework</module>
         <module>cj-life-gateway-starter</module>
         <module>cj-life-test-app</module>
     </modules>

@@ -8,14 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cj-life-gateway-starter" />
-        <module name="cj-life-gateway-core" />
+        <module name="cj-life-gateway-framework" />
         <module name="cj-life-test-app" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="cj-life-gateway-core" options="-parameters" />
+      <module name="cj-life-gateway-framework" options="-parameters" />
       <module name="cj-life-gateway-starter" options="-parameters" />
       <module name="cj-life-test-app" options="-parameters" />
     </option>

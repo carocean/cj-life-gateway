@@ -28,8 +28,8 @@
         </dependency>
         <dependency>
             <groupId>cj.life</groupId>
-            <artifactId>cj-life-gateway-core</artifactId>
-            <version>${cj.life.gateway.core.version}</version>
+            <artifactId>cj-life-gateway-framework</artifactId>
+            <version>${cj.life.gateway.framework.version}</version>
         </dependency>
     </dependencies>
 

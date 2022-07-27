@@ -8,10 +8,10 @@
         <version>1.0.0</version>
     </parent>
     <groupId>cj.life</groupId>
-    <artifactId>cj-life-gateway-core</artifactId>
-    <version>${cj.life.gateway.core.version}</version>
-    <name>cj-life-gateway-core</name>
-    <description>cj-life-gateway-core</description>
+    <artifactId>cj-life-gateway-framework</artifactId>
+    <version>${cj.life.gateway.framework.version}</version>
+    <name>cj-life-gateway-framework</name>
+    <description>cj-life-gateway-framework</description>
     <properties>
         <java.version>1.8</java.version>
         <cj-life-ability-redis.version>0.0.1</cj-life-ability-redis.version>
